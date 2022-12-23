@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Settings</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">System</string>
+    <string name="cd_go_back">Go back to previous screen</string>
+    <string name="title_settings">Settings</string>
+    <string name="cd_notifications_enabled">Notifications Enabled</string>
+    <string name="cd_notifications_disabled">Notifications Disabled</string>
+    <string name="settings_enable_notifications">Enable Notifications</string>
+    <string name="cd_hints_enabled">Hints Enabled</string>
+    <string name="cd_hints_disabled">Hints Disabled</string>
+    <string name="settings_show_hints">Show Hints</string>
+    <string name="cd_open_subscription">Open subscription Management</string>
+    <string name="settings_manage_subscription">Manage Subscription</string>
+    <string-array name="setting_options_marketing_choice">
+        <item>Opt-in for marketing emails</item>
+        <item>Don\'t send emails</item>
+    </string-array>
+    <string name="settings_option_marketing">Receive marketing emails?</string>
+    <string name="settings_option_theme">Theme</string>
+    <string name="cd_select_theme">Select Theme</string>
+    <string name="settings_app_version_title">App Version</string>
+    <string name="settings_app_version">v1.1</string>
 </resources>
+
