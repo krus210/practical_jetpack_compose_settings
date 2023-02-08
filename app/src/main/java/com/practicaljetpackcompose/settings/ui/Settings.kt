@@ -14,6 +14,7 @@ import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
@@ -147,6 +148,7 @@ fun NotificationsSettings(
         }
         Row(
             modifier = Modifier
+                .testTag(Tags.TAG_TOGGLE_ITEM)
                 .toggleable(
                     value = checked,
                     onValueChange = {
@@ -186,6 +188,7 @@ fun HintSettingsItem(
     SettingItem(modifier = modifier) {
         Row(
             modifier = Modifier
+                .testTag(Tags.TAG_CHECK_ITEM)
                 .toggleable(
                     value = checked,
                     onValueChange = { onShowHintsToggled() },
@@ -257,6 +260,7 @@ fun MarketingSettingItem(
             options.forEachIndexed { index, option ->
                 Row(
                     modifier = Modifier
+                        .testTag(Tags.TAG_MARKETING_OPTION + index)
                         .selectable(
                             selected = selectedOption.id == index,
                             onClick = {
@@ -295,6 +299,7 @@ fun ThemeSettingItem(
     SettingItem(modifier = modifier) {
         Row(
             modifier = modifier
+                .testTag(Tags.TAG_SELECT_THEME)
                 .clickable(
                     onClick = { expanded = !expanded },
                     onClickLabel = stringResource(R.string.cd_select_theme)
@@ -302,7 +307,10 @@ fun ThemeSettingItem(
                 .padding(16.dp)
         ) {
             Text(text = stringResource(R.string.settings_option_theme), modifier = Modifier.weight(1f))
-            Text(text = stringResource(selectedTheme.label))
+            Text(
+                text = stringResource(selectedTheme.label),
+                modifier = Modifier.testTag(Tags.TAG_THEME)
+            )
         }
         DropdownMenu(
             expanded = expanded,
@@ -315,6 +323,7 @@ fun ThemeSettingItem(
                         onOptionSelected(theme)
                         expanded = false
                     },
+                    modifier = Modifier.testTag(Tags.TAG_THEME_OPTION + theme.label),
                     enabled = theme != selectedTheme
                 ) {
                     Text(text = stringResource(theme.label))
